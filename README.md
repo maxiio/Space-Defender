@@ -7,4 +7,9 @@ People who wants to kill the time in the long journey or on lessons, but not at 
 Igor Katamay - Lead Programmer, Game Designer<br />
 Yurii Fedorkevych - Lead Artist, Game Designer, Sound Designer
 ### Screens:
+![alt text](https://github.com/Jurajkeee/Space-Defender/blob/master/Screens/Google%20Pixel%202.1.png)
+![alt text](https://github.com/Jurajkeee/Space-Defender/blob/master/Screens/Google%20Pixel%202.2.png)
+![alt text](https://github.com/Jurajkeee/Space-Defender/blob/master/Screens/Google%20Pixel%202.3.png)
+![alt text](https://github.com/Jurajkeee/Space-Defender/blob/master/Screens/Google%20Pixel%202.4.png)
+![alt text](https://github.com/Jurajkeee/Space-Defender/blob/master/Screens/Google%20Pixel%202.7.png)
 ### System Architecture:
