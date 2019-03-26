@@ -12,4 +12,6 @@ Yurii Fedorkevych - Lead Artist, Game Designer, Sound Designer
 ![alt text](https://github.com/Jurajkeee/Space-Defender/blob/master/Screens/Google%20Pixel%202.3.png)
 ![alt text](https://github.com/Jurajkeee/Space-Defender/blob/master/Screens/Google%20Pixel%202.4.png)
 ![alt text](https://github.com/Jurajkeee/Space-Defender/blob/master/Screens/Google%20Pixel%202.7.png)
+![alt text](https://github.com/Jurajkeee/Space-Defender/blob/master/Screens/Google%20Pixel%202.29.png)
 ### System Architecture:
+![alt text](https://github.com/Jurajkeee/Space-Defender/blob/master/Screens/Desktop.png)
