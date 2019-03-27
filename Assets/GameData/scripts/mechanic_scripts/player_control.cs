@@ -6,34 +6,31 @@ using UnityEngine;
 public class Boundary
 {
     public float xMin, xMax;
+
 }
 
 public class player_control : MonoBehaviour
 {
-    public Rigidbody rb;
-    public float speed;
-    public float tilt;
     public Boundary boundary;
-    private float posY;
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        posY = this.gameObject.transform.position.y;
-    }
-
+    Vector3 startClickPos;
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-
-
-        Vector3 movement = new Vector3(moveHorizontal, posY, rb.position.z);
-        rb.velocity = movement * speed;
-
-        rb.position = new Vector2
-            (
-                Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax),
-                posY
-            );
+        
+        if (Input.GetMouseButtonDown(0))
+        {
+            startClickPos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+        }
+        if (Input.GetMouseButton(0)) //Input.touchCount>0
+        {
+            Debug.DrawLine(this.transform.position, startClickPos, Color.blue);
+            Debug.DrawLine(startClickPos, Camera.main.ScreenToWorldPoint(Input.mousePosition), Color.red);
+            float posY = this.transform.position.y;
+            float posX = this.transform.position.x + (Camera.main.ScreenToWorldPoint(Input.mousePosition).x - startClickPos.x);
+            this.transform.position = new Vector3(Mathf.Clamp(posX, boundary.xMin, boundary.xMax) , posY);
+            startClickPos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+        }
+      
     }
+
+
 }
