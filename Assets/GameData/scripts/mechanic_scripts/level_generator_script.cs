@@ -8,6 +8,9 @@ public class level_generator_script : MonoBehaviour
     public singletone_script singletone;
     public void BuildLevel()
     {
+        ClearLevel(singletone.currentObstacles);
+        singletone.currentObstacles = new GameObject[singletone.obstaclesNumber];
+
         var newObstaclePosition = singletone.startZone.transform.localPosition.y + ((singletone.startZone.GetComponent<SpriteRenderer>().bounds.size.y * .5f) 
                                                                             + (ObsctaclesDictionary(singletone.seed.obstaclesID[0]).GetComponent<SpriteRenderer>().bounds.size.y * .5f));
         for(int i=0; i<singletone.obstaclesNumber; i++)
@@ -15,19 +18,28 @@ public class level_generator_script : MonoBehaviour
             var newObstacle = Instantiate(ObsctaclesDictionary(singletone.seed.obstaclesID[i]),this.gameObject.transform);
             newObstacle.transform.localPosition = new Vector3(singletone.startZone.transform.localPosition.x, newObstaclePosition,0);
             newObstaclePosition = CalculateY(newObstacle.transform.localPosition.y, newObstacle, i);
+
+            singletone.currentObstacles[i] = newObstacle;
         }
     }
     private float CalculateY(float currentHeignt, GameObject lastObstacle, int i)
     {
         if (i+1 != singletone.obstaclesNumber) {
             return lastObstacle.transform.localPosition.y + ((lastObstacle.GetComponent<SpriteRenderer>().bounds.size.y * .5f) + (ObsctaclesDictionary(singletone.seed.obstaclesID[i+1]).GetComponent<SpriteRenderer>().bounds.size.y * .5f));
-        } else
-        {
-            Debug.Log("Last");
-            singletone.finishZone.transform.position = new Vector3(singletone.startZone.transform.localPosition.x,
+        } 
+        singletone.finishZone.transform.localPosition = new Vector3(singletone.startZone.transform.localPosition.x,
                                                                     lastObstacle.transform.localPosition.y + ((lastObstacle.GetComponent<SpriteRenderer>().bounds.size.y * .5f) + (singletone.finishZone.GetComponent<SpriteRenderer>().bounds.size.y * .5f))
                                                                     ,0);
-            return 0;
+        Debug.Log(singletone.startZone.transform.localPosition.x + " " + lastObstacle.transform.localPosition.y + " " + (lastObstacle.GetComponent<SpriteRenderer>().bounds.size.y * .5f) + " " + (singletone.finishZone.GetComponent<SpriteRenderer>().bounds.size.y * .5f));
+        return 0;
+    }
+    public void ClearLevel(GameObject[] arr)
+    {
+        singletone.startZone.transform.position = new Vector3(0, -0.6f, 0);
+        singletone.finishZone.transform.position = new Vector3(0, 3, 0);
+        for(int i=0; i<arr.Length; i++)
+        {
+            Destroy(arr[i]);
         }
     }
     public GameObject ObsctaclesDictionary(int id)
