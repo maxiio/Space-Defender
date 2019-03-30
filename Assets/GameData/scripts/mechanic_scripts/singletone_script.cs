@@ -6,6 +6,8 @@ public class singletone_script : MonoBehaviour
 {
     [Header("-------------Level Settings----------------")]
     public float playerSpeed;
+    [HideInInspector]
+    public float tempSpeed;
     public Boundary boundary;
     public GameObject player;
     [Header("-------------------Seed----------------")]
@@ -17,10 +19,17 @@ public class singletone_script : MonoBehaviour
     public GameObject[] currentObstacles;
     public level_generator_script level_generator;
     public GameObject[] obstaclesPrefabs;
+    [Header("-------------UI Manager----------------")]
+    public ui_manager ui_manager;
+    public Canvas main_menu_canvas;
+    public Canvas level_complete_canvas;
     private void Start()
     {
         seed = new Seed(obstaclesNumber);
         seed.obstaclesNumber = obstaclesNumber;
+
+        ui_manager.Pause_Game();
+        level_complete_canvas.enabled = false;
 
         level_generator.BuildLevel();
     }

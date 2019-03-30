@@ -11,6 +11,7 @@ public class finish_script : MonoBehaviour {
         {
             Debug.Log("Trigger Entered");
             singletone.NewLevel();
+            singletone.ui_manager.Level_Complete_Window();
         }
     }
 }
