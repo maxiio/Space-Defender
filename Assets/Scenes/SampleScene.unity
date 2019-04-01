@@ -574,8 +574,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 48.7, y: 7.07}
-  m_SizeDelta: {x: 107.41, y: 5.75}
+  m_AnchoredPosition: {x: 48.7, y: 2.0974}
+  m_SizeDelta: {x: 107.41, y: -4.195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181729079
 MonoBehaviour:
@@ -798,7 +798,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 373380132}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -10037,12 +10037,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 15
+  shootingPS: {fileID: 373380132}
   tempSpeed: 0
   boundary:
     xMin: -2.2
     xMax: 2.2
   player: {fileID: 2097152863}
-  obstaclesNumber: 5
+  obstaclesNumber: 1
   seed:
     obstaclesNumber: 0
     obstaclesID: 
@@ -11354,7 +11355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1854490711
 MonoBehaviour:
   m_ObjectHideFlags: 0

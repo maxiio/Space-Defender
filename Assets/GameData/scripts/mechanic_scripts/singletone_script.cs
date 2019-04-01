@@ -6,6 +6,7 @@ public class singletone_script : MonoBehaviour
 {
     [Header("-------------Level Settings----------------")]
     public float playerSpeed;
+    public GameObject shootingPS;
     [HideInInspector]
     public float tempSpeed;
     public Boundary boundary;
@@ -23,6 +24,7 @@ public class singletone_script : MonoBehaviour
     public ui_manager ui_manager;
     public Canvas main_menu_canvas;
     public Canvas level_complete_canvas;
+    
     private void Start()
     {
         seed = new Seed(obstaclesNumber);

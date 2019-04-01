@@ -9,17 +9,20 @@ public class ui_manager : MonoBehaviour {
     {
         singletone.tempSpeed = singletone.playerSpeed;
         singletone.playerSpeed = 0;
+        singletone.shootingPS.SetActive(false);
     }
     public void Continue_Game()
     {
         singletone.playerSpeed = singletone.tempSpeed;
         singletone.level_complete_canvas.enabled = false;
+        singletone.shootingPS.SetActive(true);
     }
     public void Start_Game()
     {
         Debug.Log("Start Game");
         singletone.playerSpeed = singletone.tempSpeed;
         singletone.main_menu_canvas.enabled = false;
+        singletone.shootingPS.SetActive(true);
     }
     public void Level_Complete_Window()
     {
