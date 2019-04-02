@@ -7,6 +7,7 @@ public class singletone_script : MonoBehaviour
     [Header("-------------Level Settings----------------")]
     public float playerSpeed;
     public GameObject shootingPS;
+    public bool disable_control;
     [HideInInspector]
     public float tempSpeed;
     public Boundary boundary;

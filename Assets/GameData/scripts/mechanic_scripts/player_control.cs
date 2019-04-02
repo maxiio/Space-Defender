@@ -19,19 +19,21 @@ public class player_control : MonoBehaviour
     
     void FixedUpdate()
     {
-        
-        if (Input.GetMouseButtonDown(0))
+        if (!singletone.disable_control)
         {
-            startClickPos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
-        }
-        if (Input.GetMouseButton(0)) //Input.touchCount>0
-        {
-            Debug.DrawLine(this.transform.position, startClickPos, Color.blue);
-            Debug.DrawLine(startClickPos, Camera.main.ScreenToWorldPoint(Input.mousePosition), Color.red);
-            float posY = this.transform.position.y;
-            float posX = this.transform.position.x + (Camera.main.ScreenToWorldPoint(Input.mousePosition).x - startClickPos.x);
-            this.transform.position = new Vector3(Mathf.Clamp(posX, singletone.boundary.xMin, singletone.boundary.xMax) , posY);
-            startClickPos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+            if (Input.GetMouseButtonDown(0))
+            {
+                startClickPos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+            }
+            if (Input.GetMouseButton(0)) //Input.touchCount>0
+            {
+                Debug.DrawLine(this.transform.position, startClickPos, Color.blue);
+                Debug.DrawLine(startClickPos, Camera.main.ScreenToWorldPoint(Input.mousePosition), Color.red);
+                float posY = this.transform.position.y;
+                float posX = this.transform.position.x + (Camera.main.ScreenToWorldPoint(Input.mousePosition).x - startClickPos.x);
+                this.transform.position = new Vector3(Mathf.Clamp(posX, singletone.boundary.xMin, singletone.boundary.xMax), posY);
+                startClickPos = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 0);
+            }
         }
 
         //var currentPos = this.transform.position;
