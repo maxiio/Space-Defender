@@ -40,6 +40,6 @@ public class singletone_script : MonoBehaviour
     {
         seed = new Seed(obstaclesNumber);
         level_generator.BuildLevel();
-        player.transform.position = new Vector3(startZone.transform.position.x, -3.52f, 0);
+        player.transform.position = new Vector3(player.transform.position.x, -3.52f, 0);
     }
 }

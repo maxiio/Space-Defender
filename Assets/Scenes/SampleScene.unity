@@ -10368,12 +10368,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 15
+  shootingPS: {fileID: 373380132}
+  disable_control: 0
   tempSpeed: 0
   boundary:
     xMin: -2.2
     xMax: 2.2
   player: {fileID: 2097152863}
-  obstaclesNumber: 5
+  obstaclesNumber: 1
   seed:
     obstaclesNumber: 0
     obstaclesID: 
