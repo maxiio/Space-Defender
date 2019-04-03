@@ -10375,7 +10375,7 @@ MonoBehaviour:
     xMin: -2.2
     xMax: 2.2
   player: {fileID: 2097152863}
-  obstaclesNumber: 1
+  obstaclesNumber: 5
   seed:
     obstaclesNumber: 0
     obstaclesID: 
