@@ -21,6 +21,33 @@ public class level_generator_script : MonoBehaviour
 
             singletone.currentObstacles[i] = newObstacle;
         }
+
+        for (int i = 0; i < singletone.currentObstacles.Length; i++)
+        {
+            BuildGradients(i);
+        }
+
+    }
+    private void BuildGradients(int i)
+    {
+        if (i == 0)//Start
+        {
+            Debug.Log("1.1");
+            singletone.currentObstacles[i].transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(0, 0, 0);
+            singletone.currentObstacles[i].GetComponent<SpriteRenderer>().color = singletone.currentObstacles[i + 1].transform.GetChild(0).GetComponent<SpriteRenderer>().color;
+        }
+        else if (i + 1 == singletone.currentObstacles.Length)//End
+        {
+            Debug.Log("1.3");
+            singletone.currentObstacles[i].GetComponent<SpriteRenderer>().color = new Color(0, 0, 0);
+        }
+        else //Usual
+        {
+            Debug.Log("1.2");
+            singletone.currentObstacles[i].GetComponent<SpriteRenderer>().color = singletone.currentObstacles[i + 1].transform.GetChild(0).GetComponent<SpriteRenderer>().color;
+
+        }
+
     }
     private float CalculateY(float currentHeignt, GameObject lastObstacle, int i)
     {
