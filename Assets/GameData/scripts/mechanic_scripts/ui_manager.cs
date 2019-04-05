@@ -40,6 +40,7 @@ public class ui_manager : MonoBehaviour {
     }
     private void Update()
     {
+
         singletone.scoreUI.text = singletone.player_info.score.ToString();
         singletone.highscoreUI.text = "your highscore: " + singletone.player_info.highscore.ToString();
 
