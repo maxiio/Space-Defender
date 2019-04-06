@@ -7,16 +7,16 @@ using UnityEngine;
 public static class data_base
 {
 
-    public static void Serialize(Unit_class unitClass)
+    public static void Serialize(Player_Info unitClass)
     {
         string json = JsonUtility.ToJson(unitClass);
         SaveToFile(json);
         Debug.Log("Json saved.");
     }
 
-    public static Unit_class Deserialize()
+    public static Player_Info Deserialize()
     {
-        Unit_class unitClass = new Unit_class();
+        Player_Info unitClass = new Player_Info();
         JsonUtility.FromJsonOverwrite(ReadFromFile(), unitClass);
         Debug.Log("Data Loaded");
         return unitClass;
@@ -54,9 +54,10 @@ public static class data_base
     }
 }
 [Serializable]
-public class Unit_class
+public class Player_Info
 {
-    public int highScore;
-    public int level;
-    public GameObject currentSkin;
+    [NonSerialized]
+    public int score;
+    public int highscore;
+    public int level; 
 }
