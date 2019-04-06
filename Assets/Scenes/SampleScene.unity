@@ -570,7 +570,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1811820696}
-        m_MethodName: Start_Game
+        m_MethodName: Tap_To_Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10379,6 +10379,7 @@ MonoBehaviour:
     xMin: -2.2
     xMax: 2.2
   player: {fileID: 2097152863}
+  checker_Script: {fileID: 0}
   obstaclesNumber: 5
   seed:
     obstaclesNumber: 0
