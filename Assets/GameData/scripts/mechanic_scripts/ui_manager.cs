@@ -9,9 +9,12 @@ public class ui_manager : MonoBehaviour {
     {
         singletone.tempSpeed = singletone.playerSpeed;
         singletone.playerSpeed = 0;
+
         singletone.shootingPS.SetActive(false);
         singletone.disable_control = true;
     }
+
+
     public void Continue_Game()
     {
         singletone.playerSpeed = singletone.tempSpeed;
@@ -19,15 +22,14 @@ public class ui_manager : MonoBehaviour {
         singletone.shootingPS.SetActive(true);
         singletone.disable_control = false;
     }
-    public void Start_Game()
+
+    public void Tap_To_Play()
     {
-        Debug.Log("Start Game");
-        singletone.playerSpeed = singletone.tempSpeed;
+        Continue_Game();
         singletone.main_menu_canvas.enabled = false;
-        singletone.shootingPS.SetActive(true);
-        singletone.disable_control = false;
     }
-    public void Level_Complete_Window()
+
+    public void Level_Finished()
     {
         singletone.player_info.level++;
         singletone.nextLevelText.text = singletone.player_info.level.ToString();
@@ -35,20 +37,23 @@ public class ui_manager : MonoBehaviour {
         Pause_Game();
         singletone.NewLevel();
     }
-    public void LevelEnded()
+
+    public void Game_Lost()
     {
-        singletone.NewLevel();
-        singletone.main_menu_canvas.enabled = true;
         Pause_Game();
 
-        singletone.checker_Script.CheckAchievements();
+        singletone.NewLevel();
 
+        singletone.main_menu_canvas.enabled = true;
+
+        singletone.checker_Script.CheckAchievements();
         singletone.player_info.score = 0;
-        Debug.Log("Level Ended");
+
+        Debug.Log("Game Lost");
     }
+
     private void Update()
     {
-
         singletone.scoreUI.text = singletone.player_info.score.ToString();
         singletone.highscoreUI.text = "your highscore: " + singletone.player_info.highscore.ToString();
 

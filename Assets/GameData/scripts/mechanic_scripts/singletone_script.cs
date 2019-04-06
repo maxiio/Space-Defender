@@ -47,6 +47,7 @@ public class singletone_script : MonoBehaviour
 
         checker_Script = new checker_script(GetComponent<singletone_script>());
     }
+
     public void NewLevel()
     {
         seed = new Seed(obstaclesNumber);
@@ -64,7 +65,7 @@ public class singletone_script : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            ui_manager.LevelEnded();
+            ui_manager.Game_Lost();
         }
     }
 }
