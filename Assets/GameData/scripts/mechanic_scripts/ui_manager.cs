@@ -33,17 +33,9 @@ public class ui_manager : MonoBehaviour {
         singletone.nextLevelText.text = singletone.player_info.level.ToString();
         singletone.level_complete_canvas.enabled = true;
         Pause_Game();
-        singletone.NewLevel();
     }
     public void LevelEnded()
     {
-        singletone.NewLevel();
-        singletone.main_menu_canvas.enabled = true;
-        Pause_Game();
-
-        singletone.checker_Script.CheckAchievements();
-
-        singletone.player_info.score = 0;
         Debug.Log("Level Ended");
     }
     private void Update()

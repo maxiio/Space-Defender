@@ -14,8 +14,6 @@ public class singletone_script : MonoBehaviour
     public float tempSpeed;
     public Boundary boundary;
     public GameObject player;
-    [HideInInspector]
-    public checker_script checker_Script;
     [Header("-------------------Seed----------------")]
     public int obstaclesNumber;
     public Seed seed;
@@ -44,8 +42,6 @@ public class singletone_script : MonoBehaviour
         level_generator.BuildLevel();
 
         player_info = data_base.Deserialize();
-
-        checker_Script = new checker_script(GetComponent<singletone_script>());
     }
     public void NewLevel()
     {
