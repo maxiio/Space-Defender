@@ -55,13 +55,8 @@ public class singletone_script : MonoBehaviour
         Debug.Log(Application.persistentDataPath);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            ui_manager.Game_Lost();
-        }
-    }
+
+
 
     public void NewLevel()
     {
