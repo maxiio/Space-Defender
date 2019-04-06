@@ -14,8 +14,11 @@ public class singletone_script : MonoBehaviour
     public float tempSpeed;
     public Boundary boundary;
     public GameObject player;
+
+    //Hidden Classes
     [HideInInspector]
     public checker_script checker_Script;
+
     [Header("-------------------Seed----------------")]
     public int obstaclesNumber;
     public Seed seed;
@@ -35,24 +38,15 @@ public class singletone_script : MonoBehaviour
     
     private void Start()
     {
-        seed = new Seed(obstaclesNumber);
-        seed.obstaclesNumber = obstaclesNumber;
-        
+        NewLevel();
+                
         ui_manager.Pause_Game();
         level_complete_canvas.enabled = false;
 
-        level_generator.BuildLevel();
 
         player_info = data_base.Deserialize();
 
         checker_Script = new checker_script(GetComponent<singletone_script>());
-    }
-
-    public void NewLevel()
-    {
-        seed = new Seed(obstaclesNumber);
-        level_generator.BuildLevel();
-        player.transform.position = new Vector3(player.transform.position.x, -3.52f, 0);
     }
 
     public void OnApplicationQuit()
@@ -67,5 +61,12 @@ public class singletone_script : MonoBehaviour
         {
             ui_manager.Game_Lost();
         }
+    }
+
+    public void NewLevel()
+    {
+        seed = new Seed(obstaclesNumber);
+        level_generator.BuildLevel();
+        player.transform.position = new Vector3(player.transform.position.x, -3.52f, 0);
     }
 }
