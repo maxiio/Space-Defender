@@ -22,9 +22,9 @@ public class Follower : MonoBehaviour
     {
         if (continueFollowing)
         {
-            //distanceTravelled += rb.velocity.y* rb.velocity.x* Time.deltaTime;
-            //rb.AddForce(pathCreator.path.GetDirectionAtDistance(distanceTravelled, endOfPathInstruction));
-            //transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
+            distanceTravelled += speed* Time.deltaTime;
+            rb.velocity = new Vector2(speed,speed);
+            transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
             Debug.DrawRay(transform.position, pathCreator.path.GetDirectionAtDistance(distanceTravelled, endOfPathInstruction),Color.red);
         }
     }
