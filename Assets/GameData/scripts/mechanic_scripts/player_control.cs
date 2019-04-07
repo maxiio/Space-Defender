@@ -41,5 +41,11 @@ public class player_control : MonoBehaviour
       
     }
 
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.transform.tag == "Asteroid")
+        {
+            singletone.ui_manager.Game_Lost();
+        }
+    }
 }

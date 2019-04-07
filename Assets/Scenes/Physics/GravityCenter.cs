@@ -28,6 +28,7 @@ public class GravityCenter : MonoBehaviour
         if (collision.transform.tag == "Asteroid")
         {
             encouterObjects.Add(collision.gameObject);
+            collision.gameObject.GetComponent<Follower>().continueFollowing = false;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
