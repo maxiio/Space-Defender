@@ -23,6 +23,14 @@ public class ui_manager : MonoBehaviour {
         singletone.disable_control = false;
     }
 
+    public void Tap_To_Restart()
+    {
+        singletone.main_menu_canvas.enabled = true;
+        singletone.game_lost_canvas.enabled = false;
+        singletone.NewLevel();
+        singletone.player.transform.position = new Vector3(0, -3.52f, 0);
+    }
+
     public void Tap_To_Play()
     {
         Continue_Game();
@@ -41,11 +49,7 @@ public class ui_manager : MonoBehaviour {
     public void Game_Lost()
     {
         Pause_Game();
-
-        singletone.NewLevel();
-
-        singletone.main_menu_canvas.enabled = true;
-
+        singletone.game_lost_canvas.enabled = true;
         singletone.checker_Script.CheckAchievements();
         singletone.player_info.score = 0;
 
