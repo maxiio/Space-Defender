@@ -10390,15 +10390,15 @@ MonoBehaviour:
   level_generator: {fileID: 1658882560}
   obstaclesPrefabs:
   - {fileID: 6465714431920116292, guid: 529ff46e19983fc449dac7182142f27e, type: 3}
-  - {fileID: 6294842256678145871, guid: 9120490c964144447b1b3e73663ad671, type: 3}
-  - {fileID: 942414322963484345, guid: 50dd93867c378594f87cc9b03b27b8f9, type: 3}
-  - {fileID: 8362184778845230691, guid: e12b34744bdaea34da569b4453ae54f6, type: 3}
-  - {fileID: 1055885984011714950, guid: 524a40a19fbaae54abc21579bbb0dd88, type: 3}
-  - {fileID: 6997191705351044594, guid: 79634dbd22b1e66468295822fb7b2d6e, type: 3}
-  - {fileID: 6842393581486925623, guid: 95d49abeb6609694fa0c6f2bad999c70, type: 3}
-  - {fileID: 2158527304091950770, guid: e904f8779e5408f4d94b64eaafb0e8b9, type: 3}
-  - {fileID: 3318984414564453457, guid: be7cbea816d99164cb8b86ea65987a77, type: 3}
-  - {fileID: 1123631787573699190, guid: 4dda622e8d3c48b40840b195ae99dee4, type: 3}
+  - {fileID: 6465714431920116292, guid: 02d9cce32fafaa147b2aa034b0741a66, type: 3}
+  - {fileID: 6465714431920116292, guid: 2456a2284788d814cb04877bd06cf384, type: 3}
+  - {fileID: 6465714431920116292, guid: 890474498b2349c4bbe4037bc1be13db, type: 3}
+  - {fileID: 6465714431920116292, guid: 0079adf938bca1a4abc7e4cad6b67102, type: 3}
+  - {fileID: 6465714431920116292, guid: 85ae7be44e0bc33479a09f9c900d3094, type: 3}
+  - {fileID: 6465714431920116292, guid: fa7716655f379cf4d837787ba3f4bbe1, type: 3}
+  - {fileID: 6465714431920116292, guid: e64bd63d056a28b4a82521fc4e964a04, type: 3}
+  - {fileID: 6465714431920116292, guid: df3dbc2e3092ea14f89136982f7fadbe, type: 3}
+  - {fileID: 6465714431920116292, guid: 95833775225ce5a4886686e1b4f7715e, type: 3}
   ui_manager: {fileID: 1811820696}
   main_menu_canvas: {fileID: 1854490713}
   level_complete_canvas: {fileID: 371395793}
