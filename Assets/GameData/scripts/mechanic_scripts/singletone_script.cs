@@ -32,6 +32,7 @@ public class singletone_script : MonoBehaviour
     public ui_manager ui_manager;
     public Canvas main_menu_canvas;
     public Canvas level_complete_canvas;
+    public Canvas game_lost_canvas;
     public Text scoreUI;
     public Text highscoreUI;
     public Text nextLevelText;
