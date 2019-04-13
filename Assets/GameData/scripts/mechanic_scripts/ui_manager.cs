@@ -33,6 +33,7 @@ public class ui_manager : MonoBehaviour {
 
     public void Tap_To_Restart()
     {
+        singletone.player_info.score = 0;
         singletone.main_menu_canvas.enabled = true;
         singletone.game_lost_canvas.enabled = false;
         singletone.NewLevel();
@@ -42,6 +43,7 @@ public class ui_manager : MonoBehaviour {
 
     public void Tap_To_Play()
     {
+        singletone.player_info.score = 0;
         Continue_Game();
         singletone.main_menu_canvas.enabled = false;
         Debug.Log("Tap To Play");
@@ -67,7 +69,7 @@ public class ui_manager : MonoBehaviour {
             Pause_Game();
             singletone.game_lost_canvas.enabled = true;
             singletone.checker_Script.CheckAchievements();
-            singletone.player_info.score = 0;
+
 
             Debug.Log("Game Lost");
         }
