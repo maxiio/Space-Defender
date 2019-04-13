@@ -53,8 +53,7 @@ public class level_generator_script : MonoBehaviour
         } 
         singletone.finishZone.transform.localPosition = new Vector3(singletone.startZone.transform.localPosition.x,
                                                                     lastObstacle.transform.localPosition.y + ((lastObstacle.GetComponent<SpriteRenderer>().bounds.size.y * .5f) + (singletone.finishZone.GetComponent<SpriteRenderer>().bounds.size.y * .5f))
-                                                                    ,0);
-        Debug.Log(singletone.startZone.transform.localPosition.x + " " + lastObstacle.transform.localPosition.y + " " + (lastObstacle.GetComponent<SpriteRenderer>().bounds.size.y * .5f) + " " + (singletone.finishZone.GetComponent<SpriteRenderer>().bounds.size.y * .5f));
+                                                                    ,0);      
         return 0;
     }
     public void ClearLevel(GameObject[] arr)

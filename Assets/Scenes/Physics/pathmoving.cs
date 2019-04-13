@@ -11,7 +11,6 @@ public class pathmoving : MonoBehaviour
     private void Start()
     {
         pathCreator = this.gameObject.GetComponent<PathCreator>();
-        Debug.Log(pathCreator.transform.position);
 
         for (int i = 0; i < pathCreator.path.vertices.Length; i++)
         {
