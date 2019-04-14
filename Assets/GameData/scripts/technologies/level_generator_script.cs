@@ -12,10 +12,10 @@ public class level_generator_script : MonoBehaviour
         singletone.currentObstacles = new GameObject[singletone.obstaclesNumber];
 
         var newObstaclePosition = singletone.startZone.transform.localPosition.y + ((singletone.startZone.GetComponent<SpriteRenderer>().bounds.size.y * .5f) 
-                                                                            + (ObsctaclesDictionary(singletone.seed.obstaclesID[0]).GetComponent<SpriteRenderer>().bounds.size.y * .5f));
+                                                                            + (singletone.obstaclesPrefabs[singletone.seed.obstaclesID[0]].GetComponent<SpriteRenderer>().bounds.size.y * .5f));
         for(int i=0; i<singletone.obstaclesNumber; i++)
         {
-            var newObstacle = Instantiate(ObsctaclesDictionary(singletone.seed.obstaclesID[i]),this.gameObject.transform);
+            var newObstacle = Instantiate(singletone.obstaclesPrefabs[singletone.seed.obstaclesID[i]],this.gameObject.transform);
             newObstacle.transform.localPosition = new Vector3(singletone.startZone.transform.localPosition.x, newObstaclePosition,0);
             newObstaclePosition = CalculateY(newObstacle.transform.localPosition.y, newObstacle, i);
 
@@ -49,7 +49,7 @@ public class level_generator_script : MonoBehaviour
     private float CalculateY(float currentHeignt, GameObject lastObstacle, int i)
     {
         if (i+1 != singletone.obstaclesNumber) {
-            return lastObstacle.transform.localPosition.y + ((lastObstacle.GetComponent<SpriteRenderer>().bounds.size.y * .5f) + (ObsctaclesDictionary(singletone.seed.obstaclesID[i+1]).GetComponent<SpriteRenderer>().bounds.size.y * .5f));
+            return lastObstacle.transform.localPosition.y + ((lastObstacle.GetComponent<SpriteRenderer>().bounds.size.y * .5f) + (singletone.obstaclesPrefabs[singletone.seed.obstaclesID[i+1]].GetComponent<SpriteRenderer>().bounds.size.y * .5f));
         } 
         singletone.finishZone.transform.localPosition = new Vector3(singletone.startZone.transform.localPosition.x,
                                                                     lastObstacle.transform.localPosition.y + ((lastObstacle.GetComponent<SpriteRenderer>().bounds.size.y * .5f) + (singletone.finishZone.GetComponent<SpriteRenderer>().bounds.size.y * .5f))
@@ -65,33 +65,7 @@ public class level_generator_script : MonoBehaviour
             Destroy(arr[i]);
         }
     }
-    public GameObject ObsctaclesDictionary(int id)
-    {
-        switch (id)
-        {
-            case 1:
-                return singletone.obstaclesPrefabs[0];
-            case 2:
-                return singletone.obstaclesPrefabs[1];
-            case 3:
-                return singletone.obstaclesPrefabs[2];
-            case 4:
-                return singletone.obstaclesPrefabs[3];
-            case 5:
-                return singletone.obstaclesPrefabs[4];
-            case 6:
-                return singletone.obstaclesPrefabs[5];
-            case 7:
-                return singletone.obstaclesPrefabs[6];
-            case 8:
-                return singletone.obstaclesPrefabs[7];
-            case 9:
-                return singletone.obstaclesPrefabs[8];
-            case 10:
-                return singletone.obstaclesPrefabs[9];
-        }
-        return null;
-    }
+
 
 }
 [System.Serializable]
