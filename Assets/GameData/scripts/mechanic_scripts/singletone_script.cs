@@ -96,7 +96,7 @@ public class singletone_script : MonoBehaviour
     {
         if (!debugMode)
         {
-            seed = new Seed(obstaclesNumber);
+            seed = new Seed(obstaclesNumber, obstaclesPrefabs.Length);
         }
         level_generator.BuildLevel();
         player.transform.position = new Vector3(player.transform.position.x, -3.52f, 0);

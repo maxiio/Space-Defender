@@ -1095,7 +1095,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 2.72
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4657,7 +4657,7 @@ ParticleSystem:
     m_EnergyLossOnCollision:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.2
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -10584,7 +10584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761c1083ac13a3e4ba9ed06b609b5fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugMode: 1
+  debugMode: 0
   fps: {fileID: 72156333}
   console: {fileID: 786270577}
   playerSpeed: 15
@@ -10602,7 +10602,7 @@ MonoBehaviour:
   obstaclesNumber: 5
   seed:
     obstaclesNumber: 0
-    obstaclesID: 0900000004000000030000000300000003000000
+    obstaclesID: 0a00000004000000030000000300000003000000
   startZone: {fileID: 1260088780}
   finishZone: {fileID: 154790790}
   currentObstacles: []
@@ -10619,7 +10619,17 @@ MonoBehaviour:
   - {fileID: 6465714431920116292, guid: e64bd63d056a28b4a82521fc4e964a04, type: 3}
   - {fileID: 6465714431920116292, guid: df3dbc2e3092ea14f89136982f7fadbe, type: 3}
   - {fileID: 6465714431920116292, guid: 95833775225ce5a4886686e1b4f7715e, type: 3}
-  - {fileID: 6465714431920116292, guid: 95833775225ce5a4886686e1b4f7715e, type: 3}
+  - {fileID: 6465714431920116292, guid: 29cfe8f92890946bdb38f67af039fdc1, type: 3}
+  - {fileID: 6465714431920116292, guid: 62bb7253b672c4188bb5b0360e994161, type: 3}
+  - {fileID: 6465714431920116292, guid: fd78462eac32b44ff9c63a328bd7c813, type: 3}
+  - {fileID: 6465714431920116292, guid: aa3f2b02ff0d64d899ddab8e5ace760c, type: 3}
+  - {fileID: 6465714431920116292, guid: f4822082397f246468316ea755d7464c, type: 3}
+  - {fileID: 6465714431920116292, guid: 427b571f923994f75abf215142cb3e80, type: 3}
+  - {fileID: 6465714431920116292, guid: 5a3131e0326394d9e94e797cccbf50ce, type: 3}
+  - {fileID: 6465714431920116292, guid: 4ed9245e2b962466996b050dea6b2b48, type: 3}
+  - {fileID: 6465714431920116292, guid: 67a78ca7402024017999495ad6d41879, type: 3}
+  - {fileID: 6465714431920116292, guid: b6ff44275871c4211b3fed4ec3966e61, type: 3}
+  - {fileID: 6465714431920116292, guid: b6ff44275871c4211b3fed4ec3966e61, type: 3}
   ui_manager: {fileID: 1811820696}
   main_menu_canvas: {fileID: 1854490713}
   level_complete_canvas: {fileID: 371395793}

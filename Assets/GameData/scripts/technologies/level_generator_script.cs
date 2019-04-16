@@ -77,21 +77,21 @@ public class Seed
 
     public int[] obstaclesID;
 
-    public Seed(int obstaclesNumber)
+    public Seed(int obstaclesNumber, int obstaclesPullLength)
     {
         obstaclesID = new int[obstaclesNumber];
-        obstaclesID = SmartRandom.GenerateSeed(obstaclesNumber);
+        obstaclesID = SmartRandom.GenerateSeed(obstaclesNumber, obstaclesPullLength);
     }
 
 }
 public static class SmartRandom
 {
-    public static int[] GenerateSeed(int obstaclesNumber)
+    public static int[] GenerateSeed(int obstaclesNumber, int obstaclesPullLength)
     {
         int[] result = new int[obstaclesNumber];
         for (int i = 0; i < obstaclesNumber; i++)
         {
-            result[i] = RandomUniqNumber(result);
+            result[i] = RandomUniqNumber(result, obstaclesPullLength);
         }
         return result;
     }
@@ -103,12 +103,12 @@ public static class SmartRandom
         }
         return false;
     }
-    private static int RandomUniqNumber(int[] arr)
+    private static int RandomUniqNumber(int[] arr, int obstaclesPullLength)
     {
-        var uniqueNumber = Random.Range(0, 10);
+        var uniqueNumber = Random.Range(0, obstaclesPullLength);
         if (CheckForDuplicate(uniqueNumber, arr))
         {
-            return uniqueNumber = RandomUniqNumber(arr);
+            return uniqueNumber = RandomUniqNumber(arr, obstaclesPullLength);
         }
         else
         {
