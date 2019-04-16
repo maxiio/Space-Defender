@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 4460092576627713179}
   - component: {fileID: 4460092576627713172}
   - component: {fileID: 2492336116657955601}
+  - component: {fileID: 2343691722278358212}
   m_Layer: 0
-  m_Name: Asteroid with Path
+  m_Name: Asteroid With Path
   m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -119,6 +120,7 @@ MonoBehaviour:
   pathCreator: {fileID: 0}
   speed: 1.63
   endOfPathInstruction: 2
+  delay: 0
   continueFollowing: 1
 --- !u!61 &2492336116657955601
 BoxCollider2D:
@@ -146,3 +148,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.11, y: 7.31}
   m_EdgeRadius: 0
+--- !u!114 &2343691722278358212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4460092576627713173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f35ec9384ad42ae9ece3b09c613b96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

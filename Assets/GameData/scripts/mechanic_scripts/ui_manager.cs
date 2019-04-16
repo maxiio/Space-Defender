@@ -69,8 +69,6 @@ public class ui_manager : MonoBehaviour {
             Pause_Game();
             singletone.game_lost_canvas.enabled = true;
             singletone.checker_Script.CheckAchievements();
-
-
             Debug.Log("Game Lost");
         }
     }

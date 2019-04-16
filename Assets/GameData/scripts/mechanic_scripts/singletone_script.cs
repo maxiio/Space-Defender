@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class singletone_script : MonoBehaviour
 {
+    [Header("-----------Build Mode----------------")]
+    public bool debugMode;
+    public GameObject fps;
+    public GameObject console;
     [Header("-------------Level Settings----------------")]
     public float playerSpeed;
     public GameObject shootingPS;
@@ -36,9 +40,19 @@ public class singletone_script : MonoBehaviour
     public Text scoreUI;
     public Text highscoreUI;
     public Text nextLevelText;
+
+
+
+    private float timer;
     
     private void Start()
     {
+        if (!debugMode)
+        {
+            fps.SetActive(false);
+            console.SetActive(false);
+        }
+
         NewLevel();
                 
         ui_manager.Pause_Game();
@@ -48,6 +62,8 @@ public class singletone_script : MonoBehaviour
         player_info = data_base.Deserialize();
 
         checker_Script = new checker_script(GetComponent<singletone_script>());
+
+
     }
 
     public void OnApplicationQuit()
@@ -56,12 +72,32 @@ public class singletone_script : MonoBehaviour
         Debug.Log(Application.persistentDataPath);
     }
 
-
-
+    private void OnApplicationFocus(bool focus)
+    {
+        if (!focus)
+        {
+            data_base.Serialize(player_info);
+            Debug.Log("Saved On Focus Lost");
+        }
+    }
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer>5)
+        {
+            checker_Script.CheckAchievements();
+            data_base.Serialize(player_info);
+            timer = 0;
+            Debug.Log("System Data Save");
+        }
+    }
 
     public void NewLevel()
     {
-        seed = new Seed(obstaclesNumber);
+        if (!debugMode)
+        {
+            seed = new Seed(obstaclesNumber);
+        }
         level_generator.BuildLevel();
         player.transform.position = new Vector3(player.transform.position.x, -3.52f, 0);
     }

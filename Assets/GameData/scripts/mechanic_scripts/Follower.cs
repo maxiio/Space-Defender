@@ -11,6 +11,9 @@ public class Follower : MonoBehaviour
     float distanceTravelled;
     private Rigidbody2D rb;
 
+    public float delay;
+    private float timer;
+
 
     public bool continueFollowing = true;
     private void Start()
@@ -20,7 +23,8 @@ public class Follower : MonoBehaviour
 
     private void Update()
     {
-        if (continueFollowing)
+        timer += Time.deltaTime;
+        if (continueFollowing && timer>delay)
         {
             distanceTravelled += speed* Time.deltaTime;
             rb.velocity = pathCreator.path.GetDirectionAtDistance(distanceTravelled, endOfPathInstruction)*speed;
@@ -30,6 +34,7 @@ public class Follower : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Debug.Log(collision.transform.tag);
         continueFollowing = false;
     }
 }

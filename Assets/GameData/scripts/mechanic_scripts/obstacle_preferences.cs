@@ -9,7 +9,6 @@ public class obstacle_preferences : MonoBehaviour
     private void Start()
     {
         //startPos = transform.position;
-
         localObstaclesGroup = transform.GetChild(1).gameObject;
         localObstaclesGroup.SetActive(false);
     }
