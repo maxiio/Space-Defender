@@ -10584,7 +10584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761c1083ac13a3e4ba9ed06b609b5fb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugMode: 0
+  debugMode: 1
   fps: {fileID: 72156333}
   console: {fileID: 786270577}
   playerSpeed: 15
@@ -10602,7 +10602,7 @@ MonoBehaviour:
   obstaclesNumber: 5
   seed:
     obstaclesNumber: 0
-    obstaclesID: 0a00000004000000030000000300000003000000
+    obstaclesID: 0c0000000b000000120000001100000010000000
   startZone: {fileID: 1260088780}
   finishZone: {fileID: 154790790}
   currentObstacles: []
