@@ -25,9 +25,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4632902477665538134}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.94344455, y: -1.9655075, z: 0}
-  m_LocalScale: {x: 7.86203, y: 7.86203, z: 7.86203}
+  m_LocalScale: {x: 5.7136846, y: 3.5499752, z: 5.7136846}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,7 +82,7 @@ MonoBehaviour:
     displayControlPoints: 1
     bezierHandleScale: 1
     globalDisplaySettingsFoldout: 0
-    keepConstantHandleSize: 0
+    keepConstantHandleSize: 1
     vertexHandleSize: 0.2
     showNormalsInVertexMode: 0
     showDisplayOptions: 1
