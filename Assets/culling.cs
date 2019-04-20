@@ -15,7 +15,7 @@ public class culling : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else if(wasSeen == true && GetComponent<Follower>().endOfPathInstruction != PathCreation.EndOfPathInstruction.Loop)
+        else if(wasSeen == true && GetComponent<Follower>().endOfPathInstruction == PathCreation.EndOfPathInstruction.Stop)
         {
             Destroy(gameObject);
         }
