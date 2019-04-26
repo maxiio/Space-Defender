@@ -32,7 +32,7 @@ public class level_generator_script : MonoBehaviour
     {
         if (i == 0)//Start
         {
-            singletone.currentObstacles[i].transform.GetChild(0).GetComponent<SpriteRenderer>().color = new Color(0, 0, 0);
+            singletone.currentObstacles[i].transform.GetChild(0).GetComponent<SpriteRenderer>().color = singletone.startZone.GetComponent<SpriteRenderer>().color;
             singletone.currentObstacles[i].GetComponent<SpriteRenderer>().color = singletone.currentObstacles[i + 1].transform.GetChild(0).GetComponent<SpriteRenderer>().color;
         }
         else if (i + 1 == singletone.currentObstacles.Length)//End

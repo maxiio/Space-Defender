@@ -53,7 +53,7 @@ public class singletone_script : MonoBehaviour
             console.SetActive(false);
         }
 
-        NewLevel();
+
                 
         ui_manager.Pause_Game();
         level_complete_canvas.enabled = false;
@@ -98,6 +98,7 @@ public class singletone_script : MonoBehaviour
         {
             seed = new Seed(obstaclesNumber, obstaclesPrefabs.Length);
         }
+        startZone.GetComponent<dynamic_gradient>().isDynamic = false;
         level_generator.BuildLevel();
         player.transform.position = new Vector3(player.transform.position.x, -3.52f, 0);
     }

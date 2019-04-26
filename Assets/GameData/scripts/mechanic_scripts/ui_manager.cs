@@ -35,14 +35,16 @@ public class ui_manager : MonoBehaviour {
     {
         singletone.player_info.score = 0;
         singletone.main_menu_canvas.enabled = true;
-        singletone.game_lost_canvas.enabled = false;
         singletone.NewLevel();
+        singletone.game_lost_canvas.enabled = false;
         singletone.player.transform.position = new Vector3(0, -3.52f, 0);
         Debug.Log("Tap To Restart");
     }
 
     public void Tap_To_Play()
     {
+
+        singletone.NewLevel();
         singletone.player_info.score = 0;
         Continue_Game();
         singletone.main_menu_canvas.enabled = false;
