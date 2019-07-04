@@ -10602,7 +10602,7 @@ MonoBehaviour:
   obstaclesNumber: 5
   seed:
     obstaclesNumber: 0
-    obstaclesID: 1400000013000000120000001100000014000000
+    obstaclesID: 0b0000000e000000120000001100000014000000
   startZone: {fileID: 1260088780}
   finishZone: {fileID: 154790790}
   currentObstacles: []
@@ -12794,13 +12794,23 @@ PrefabInstance:
     - target: {fileID: 4443900447732612337, guid: 04928d01523c3b946b41a6a37441ca7b,
         type: 3}
       propertyPath: paralax_brakes
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4443900447732612337, guid: 04928d01523c3b946b41a6a37441ca7b,
         type: 3}
       propertyPath: singletone
       value: 
       objectReference: {fileID: 460291400}
+    - target: {fileID: 3991322963887905377, guid: 04928d01523c3b946b41a6a37441ca7b,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991322963887905377, guid: 04928d01523c3b946b41a6a37441ca7b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1914708762289136262, guid: 04928d01523c3b946b41a6a37441ca7b, type: 3}
     - {fileID: 1914708762580326050, guid: 04928d01523c3b946b41a6a37441ca7b, type: 3}

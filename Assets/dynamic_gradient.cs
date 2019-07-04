@@ -12,6 +12,11 @@ public class dynamic_gradient : MonoBehaviour
     {
         background = this.transform.GetChild(0).GetComponent<SpriteRenderer>();
         gradient = GetComponent<SpriteRenderer>();
+
+        background.color = HSBColor.ToColor(new HSBColor(Random.Range(0f,100f)/100,HSBColor.FromColor(background.color).s, HSBColor.FromColor(background.color).b));
+        gradient.color = HSBColor.ToColor(new HSBColor(Random.Range(0f, 100f) / 100, HSBColor.FromColor(gradient.color).s, HSBColor.FromColor(gradient.color).b));
+
+        Debug.Log(Random.Range(0f, 255f) / 100);
     }
 
     // Update is called once per frame
