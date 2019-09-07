@@ -13,7 +13,7 @@ public class stars_moving : MonoBehaviour
     }
     void Update()
     {
-        if (!singletone.disable_control || singletone.main_menu_canvas.enabled==true)
+        if (!singletone.disable_control || singletone.main_menu_canvas.enabled == true || singletone.level_complete_canvas.enabled == true)
         {
             Material mat = mr.material;
             Vector2 offset = mat.mainTextureOffset;

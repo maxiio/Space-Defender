@@ -10589,6 +10589,7 @@ MonoBehaviour:
   console: {fileID: 786270577}
   playerSpeed: 15
   shootingPS: {fileID: 373380132}
+  flyingPS: {fileID: 449167401}
   disable_control: 0
   player_info:
     highscore: 0
@@ -10630,6 +10631,7 @@ MonoBehaviour:
   - {fileID: 6465714431920116292, guid: 67a78ca7402024017999495ad6d41879, type: 3}
   - {fileID: 6465714431920116292, guid: b6ff44275871c4211b3fed4ec3966e61, type: 3}
   - {fileID: 6465714431920116292, guid: b6ff44275871c4211b3fed4ec3966e61, type: 3}
+  app_State_Manager: {fileID: 1811820700}
   ui_manager: {fileID: 1811820696}
   main_menu_canvas: {fileID: 1854490713}
   level_complete_canvas: {fileID: 371395793}
@@ -11530,7 +11532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.9, y: -1.1}
+  m_AnchoredPosition: {x: -3.6, y: 0.16}
   m_SizeDelta: {x: 807.2, y: 1435}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1185128515
@@ -12166,6 +12168,7 @@ GameObject:
   - component: {fileID: 1658882559}
   - component: {fileID: 1658882558}
   - component: {fileID: 1658882560}
+  - component: {fileID: 1658882561}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -12215,6 +12218,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   singletone: {fileID: 460291400}
+--- !u!114 &1658882561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658882557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae491a9d2035348e6b255d13ed304531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroids_on_screen: 0
+  obstacles: []
 --- !u!1 &1727003713
 GameObject:
   m_ObjectHideFlags: 0
@@ -12330,6 +12347,7 @@ GameObject:
   - component: {fileID: 1811820698}
   - component: {fileID: 1811820697}
   - component: {fileID: 1811820696}
+  - component: {fileID: 1811820700}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -12398,6 +12416,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1811820700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811820695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c62525b83ee54b36a69b22598178a8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  singletone: {fileID: 460291400}
 --- !u!1 &1854490710
 GameObject:
   m_ObjectHideFlags: 0
@@ -12809,6 +12840,21 @@ PrefabInstance:
     - target: {fileID: 3991322963887905377, guid: 04928d01523c3b946b41a6a37441ca7b,
         type: 3}
       propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726021356016017146, guid: 04928d01523c3b946b41a6a37441ca7b,
+        type: 3}
+      propertyPath: singletone
+      value: 
+      objectReference: {fileID: 460291400}
+    - target: {fileID: 3726021356016017146, guid: 04928d01523c3b946b41a6a37441ca7b,
+        type: 3}
+      propertyPath: paralax_brakes
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3726021356016017146, guid: 04928d01523c3b946b41a6a37441ca7b,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

@@ -45,7 +45,7 @@ public class player_control : MonoBehaviour
     {
         if(collision.transform.tag == "Asteroid")
         {
-            singletone.ui_manager.Game_Lost();
+            singletone.app_State_Manager.State_Losed();
         }
     }
 }

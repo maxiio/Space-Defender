@@ -10,7 +10,7 @@ public class finish_script : MonoBehaviour {
         if(collision.transform.tag == "Player")
         {
             Debug.Log("Trigger Entered");
-            singletone.ui_manager.Level_Finished();
+            singletone.app_State_Manager.State_Finished();
         }
     }
 }

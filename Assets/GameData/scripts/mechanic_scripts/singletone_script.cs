@@ -12,6 +12,7 @@ public class singletone_script : MonoBehaviour
     [Header("-------------Level Settings----------------")]
     public float playerSpeed;
     public GameObject shootingPS;
+    public GameObject flyingPS;
     public bool disable_control;
     public Player_Info player_info;
     [HideInInspector]
@@ -33,6 +34,7 @@ public class singletone_script : MonoBehaviour
     public level_generator_script level_generator;
     public GameObject[] obstaclesPrefabs;
     [Header("-------------UI Manager----------------")]
+    public app_state_manager app_State_Manager;
     public ui_manager ui_manager;
     public Canvas main_menu_canvas;
     public Canvas level_complete_canvas;
@@ -40,8 +42,6 @@ public class singletone_script : MonoBehaviour
     public Text scoreUI;
     public Text highscoreUI;
     public Text nextLevelText;
-
-
 
     private float timer;
     
@@ -53,17 +53,13 @@ public class singletone_script : MonoBehaviour
             console.SetActive(false);
         }
 
-
-                
-        ui_manager.Pause_Game();
+        app_State_Manager.Paused();
         level_complete_canvas.enabled = false;
 
 
         player_info = data_base.Deserialize();
 
         checker_Script = new checker_script(GetComponent<singletone_script>());
-
-
     }
 
     public void OnApplicationQuit()
